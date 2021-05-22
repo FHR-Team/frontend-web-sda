@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+.carousel-caption {
+    width: max-content;
+    left: 50% !important;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.carousel-control-prev {
+    display: block !important;
+    width: max-content !important;
+    height: max-content;
+    left: 26% !important;
+    top: 80% !important;
+    transform: translate(-50%, -50%);
+}
+.carousel-control-next {
+    display: block !important;
+    width: max-content !important;
+    height: max-content;
+    left: 28% !important;
+    top: 80% !important;
+    transform: translate(-50%, -50%);
+}
+.carousel-indicators {
+    margin: 0 !important;
+    width: max-content !important;
+    height: max-content;
+    left: 35% !important;
+    top: 80% !important;
+    transform: translate(-50%, -50%);
+}
+.btn-selengkapnya {
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border: none !important;
+    text-shadow: none !important;
+}
+.dark-80 {
+    filter: brightness(76%);
+}
+.home-infos {
+    background-color: #F4F6F5;
+}
+.hero-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: inherit;
+}
+a.read-more {
+    color: #01AB55 !important;
+}
+hr.lg {
+    border-top: 1px solid #01AB55;
+    width: 3rem;
+}
+hr.md {
+    border-top: 1px solid #01AB55;
+    width: .7rem;
+}
+.news + p {
+    text-indent: 24px;
+    text-align: justify;
+}
+.bg-footer {
+    background-color: #10171D;
+}
+.bg-footer1 {
+    background-color: #DBDCCE;
+}
+.no-border {
+    border: none !important;
+}
+.no-border:focus {
+    box-shadow: none !important;
+}
+.nav-link.active {
+    color: #01AB55 !important;
+}
+.counter {
+    margin-top: -3.5rem;
+}
+.hhr {
+    background-image: url('../bg1.png');
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.tx-11 {
+    font-size: 11px;
+}
+.tx-12 {
+    font-size: 12px;
+}
+.tx-13 {
+    font-size: 13px;
+}
+.tx-14 {
+    font-size: 14px;
+}
+.tx-15 {
+    font-size: 14px;
+}
+.tx-16 {
+    font-size: 16px;
+}
+.tx-19 {
+    font-size: 19px;
+}
+.tx-20 {
+    font-size: 20px;
+}
+.tx-22 {
+    font-size: 22px;
+}
+.tx-24 {
+    font-size: 24px;
+}
+.tx-36 {
+    font-size: 36px;
+}
+.tx-64 {
+    font-size: 64px;
+}
+.tx-86 {
+    font-size: 86px;
+}
