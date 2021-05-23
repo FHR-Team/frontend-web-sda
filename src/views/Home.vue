@@ -154,7 +154,7 @@ import MenuLayanan from '@/components/MenuLayanan.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Navbar, MenuLayanan, Footer
   },
