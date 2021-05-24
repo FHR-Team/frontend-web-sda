@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 body {
     font-family: 'Nunito', sans-serif;
@@ -93,6 +94,30 @@ hr.md {
 .ln-pemerintahan > .container {
     background-image: url('../bg2.svg');
 }
+.bgx {
+    height: 364px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.blog-content {
+    font-family: 'EB Garamond', serif;
+    font-size: 24px;
+}
+.mw-860{
+    max-width: 860px;
+}
+.bg-gray {
+    background-color: #E5E5E5;
+}
+.menu-layanan {
+    margin-top: -4rem;
+}
+.btn-layanan:hover, .btn-layanan:focus, .btn-layanan:active {
+    color: #FFFFFF !important;
+    background-color: #01AB55 !important;
+    border: 1px solid #01AB55 !important;
+}
 .tx-11 {
     font-size: 11px;
 }
@@ -131,6 +156,9 @@ hr.md {
 }
 .tx-64 {
     font-size: 64px;
+}
+.tx-72 {
+    font-size: 72px;
 }
 .tx-86 {
     font-size: 86px;

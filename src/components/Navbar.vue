@@ -23,21 +23,21 @@
             <b-collapse id="nav-collapse" is-nav class="px-2">
                 <div class="d-flex flex-fill flex-wrap justify-content-center align-content-around h-100">
                     <b-navbar-nav class="justify-content-around align-items-center w-100 my-1">
-                        <b-nav-item href="#" class="font-weight-bold tx-16" :active="active == 0">Home</b-nav-item>
+                        <b-nav-item to="/" class="font-weight-bold tx-16" :active="active == 0">Home</b-nav-item>
                         <b-nav-item-dropdown text="Tentang Sidoarjo" class="font-weight-bold tx-16">
-                            <b-dropdown-item v-for="item in dataTentangSidoarjo" :key="item.title" :href="item.link" class="font-weight-bold tx-16">{{item.title}}</b-dropdown-item>
+                            <b-dropdown-item v-for="item in dataTentangSidoarjo" :key="item.title" :to="item.link" class="font-weight-bold tx-16">{{item.title}}</b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item-dropdown text="Fasilitas" class="font-weight-bold tx-16">
-                            <b-dropdown-item v-for="item in dataFasilitas" :key="item.title" :href="item.link" class="font-weight-bold tx-16">{{item.title}}</b-dropdown-item>
+                            <b-dropdown-item v-for="item in dataFasilitas" :key="item.title" :to="item.link" class="font-weight-bold tx-16">{{item.title}}</b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item-dropdown text="Layanan" class="font-weight-bold tx-16">
-                            <b-dropdown-item v-for="item in dataLayanan" :key="item.title" :href="item.link" class="font-weight-bold tx-16">{{item.title}}</b-dropdown-item>
+                            <b-dropdown-item v-for="item in dataLayanan" :key="item.title" :to="item.link" class="font-weight-bold tx-16">{{item.title}}</b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item-dropdown text="Publik" class="font-weight-bold tx-16">
-                            <b-dropdown-item v-for="item in dataPublik" :key="item.title" :href="item.link" class="font-weight-bold tx-16">{{item.title}}</b-dropdown-item>
+                            <b-dropdown-item v-for="item in dataPublik" :key="item.title" :to="item.link" class="font-weight-bold tx-16">{{item.title}}</b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item-dropdown text="Pelaporan Kerja" class="font-weight-bold tx-16">
-                            <b-dropdown-item v-for="item in dataPelaporanKerja" :key="item.title" :href="item.link" class="font-weight-bold tx-16">{{item.title}}</b-dropdown-item>
+                            <b-dropdown-item v-for="item in dataPelaporanKerja" :key="item.title" :to="item.link" class="font-weight-bold tx-16">{{item.title}}</b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item-dropdown text="ID" class="font-weight-bold tx-16">
                             <b-dropdown-item v-for="item in dataBahasa" :key="item.title" :href="item.link" class="font-weight-bold tx-16">{{item.title}}</b-dropdown-item>
@@ -82,7 +82,7 @@ export default {
           dataPublik: [],
           dataPelaporanKerja: [],
           dataBahasa: [],
-          tanggal: '',
+          tanggal: '-',
           timer: ''
       }
   },
@@ -92,64 +92,32 @@ export default {
       this.setDataDropdown()
   },
   methods: {
+      slugify(t) {
+          return t.toLowerCase().replace(/[^\w ]+/g,'').trim().replace(/ +/g,'-')
+      },
+      replacer(data, titles, prepend) {
+          titles.forEach(e => {
+            const l = this.slugify(e)
+            data.push({title: e, link: prepend+l})
+          });
+      },
       setDataDropdown() {
-          this.dataTentangSidoarjo = [
-              {title: 'Kabupaten Sidoarjo', link: '#'},
-              {title: 'Geografis', link: '#'},
-              {title: 'Profil Masyarakat', link: '#'},
-              {title: 'Profil Pemimpin Daerah', link: '#'},
-              {title: 'Pemerintahan', link: '#'},
-              {title: 'Pariwisata & Industri Kreatif', link: '#'},
-              {title: 'Ekonomi & Bisnis', link: '#'},
-              {title: 'Selayang Pandang Kab. Sidoarjo', link: '#'},
-              {title: 'Sidoarjo Smart City', link: '#'},
-              {title: 'Warna-Warni Sidoarjo', link: '#'}
-          ]
-          this.dataFasilitas = [
-              {title: 'Pendidikan', link: '#'},
-              {title: 'Kesehatan', link: '#'},
-              {title: 'Transportasi', link: '#'},
-              {title: 'Akomodasi', link: '#'},
-              {title: 'Kantor Dinas', link: '#'},
-              {title: 'Kantor Pelayanan Publik', link: '#'},
-              {title: 'Olahraga', link: '#'},
-              {title: 'Komunitas', link: '#'},
-              {title: 'Tempat Ibadah', link: '#'},
-              {title: 'Pasar', link: '#'},
-              {title: 'Ruang Terbuka Hijau', link: '#'}
-          ]
-          this.dataLayanan = [
-              {title: 'Informasi COVID-19', link: '#'},
-              {title: 'Kependudukan dan Catatan Sipil', link: '#'},
-              {title: 'Kesehatan', link: '#'},
-              {title: 'Pendidikan', link: '#'},
-              {title: 'Tanggap Bencana', link: '#'},
-              {title: 'Transparansi Keuangan', link: '#'},
-              {title: 'Perencanaan Kota', link: '#'},
-              {title: 'Perijinan', link: '#'},
-              {title: 'PDAM', link: '#'},
-              {title: 'Perpajakan', link: '#'}
-          ]
-          this.dataPublik = [
-              {title: 'Berinvestasi di Sidoarjo', link: '#'},
-              {title: 'Berita', link: '#'},
-              {title: 'Pengumuman', link: '#'},
-              {title: 'Agenda / Kegiatan', link: '#'},
-              {title: 'Majalah Gema Delta', link: '#'},
-              {title: 'SJDIH', link: '#'},
-              {title: 'PPID', link: '#'},
-              {title: 'Bakohumas', link: '#'},
-              {title: 'Pengaduan Masyarakat P3M', link: '#'},
-              {title: 'LAPOR !', link: '#'},
-              {title: 'Mitra Media', link: '#'}
-          ]
-          this.dataPelaporanKerja = [
-              {title: 'LAKIP', link: '#'},
-              {title: 'LKPJ', link: '#'},
-              {title: 'LPPD', link: '#'},
-              {title: 'RLPPD', link: '#'},
-              {title: 'PAPARAN SAKIP', link: '#'}
-          ]
+          this.replacer(this.dataTentangSidoarjo, [
+              'Kabupaten Sidoarjo', 'Geografis', 'Profil Masyarakat', 'Profil Pemimpin Daerah', 'Pemerintahan', 'Pariwisata & Industri Kreatif', 'Ekonomi & Bisnis', 'Selayang Pandang Kab. Sidoarjo', 'Sidoarjo Smart City', 'Warna-Warni Sidoarjo'
+            ], '/tentang/')
+          this.replacer(this.dataFasilitas, [
+              'Pendidikan', 'Kesehatan', 'Transportasi', 'Akomodasi', 'Kantor Dinas', 'Kantor Pelayanan Publik', 'Olahraga', 'Komunitas', 'Tempat Ibadah', 'Pasar', 'Ruang Terbuka Hijau'
+            ], '/fasilitas/')
+          this.replacer(this.dataLayanan, [
+              'Informasi COVID-19', 'Kependudukan dan Catatan Sipil', 'Kesehatan', 'Pendidikan', 'Tanggap Bencana', 'Transparansi Keuangan', 'Perencanaan Kota', 'Perijinan', 'PDAM', 'Perpajakan'
+            ], '/layanan/')
+          this.replacer(this.dataPublik, [
+              'Berinvestasi di Sidoarjo', 'Berita', 'Pengumuman', 'Agenda / Kegiatan', 'Majalah Gema Delta', 'SJDIH', 'PPID', 'Bakohumas', 'Pengaduan Masyarakat P3M', 'LAPOR !', 'Mitra Media'
+            ], '/publik/')
+          this.replacer(this.dataPelaporanKerja, [
+              'LAKIP', 'LKPJ', 'LPPD', 'RLPPD', 'PAPARAN SAKIP'
+            ], '/pelaporan-kerja/')
+
           this.dataBahasa = [
               {title: 'Bahasa Indonesia', link: '#'},
               {title: 'Bahasa Inggris', link: '#'},

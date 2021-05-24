@@ -38,14 +38,3 @@ export default {
     }
 }
 </script>
-
-<style>
-.menu-layanan {
-    margin-top: -4rem;
-}
-.btn-layanan:hover, .btn-layanan:focus, .btn-layanan:active {
-    color: #FFFFFF !important;
-    background-color: #01AB55 !important;
-    border: 1px solid #01AB55 !important;
-}
-</style>
