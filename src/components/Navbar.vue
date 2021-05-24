@@ -51,7 +51,7 @@
                 <!-- Right aligned nav items -->
                 <div class="d-flex flex-column justify-content-around h-100">
                     <b-navbar-nav class="ml-auto justify-content-around my-1">
-                        <b-button size="md rounded-pill" class="btn-warning text-white my-2 my-sm-0 mr-md-1 px-4 font-weight-bold tx-16" href="#">Kontak</b-button>
+                        <router-link class="btn btn-warning rounded-pill my-2 my-sm-0 mr-md-1 px-4 font-weight-bold tx-16 text-white" to="/kontak">Kontak</router-link>
                         <router-link class="btn btn-success rounded-pill my-2 my-sm-0 ml-md-1 px-4 font-weight-bold tx-16" to="/sign-in">Login</router-link>
                     </b-navbar-nav>
                     <div class="d-none d-md-flex justify-content-around">
