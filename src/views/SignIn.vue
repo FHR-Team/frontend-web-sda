@@ -3,8 +3,8 @@
       <div class="container bg-white h-100">
           <div class="d-flex h-100 justify-content-center align-items-center">
               <div class="row rounded shadow">
-                  <div class="col p-0"><img class="img-fluid h-100 rounded-left" src="../assets/batik1.png" alt=""></div>
-                  <div class="col p-3 d-flex flex-column justify-content-center align-items-center">
+                  <div class="col-12 col-md-6 p-0"><img class="img-fluid h-100 rounded-left" src="../assets/batik1.png" alt=""></div>
+                  <div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center align-items-center">
                       <img src="../assets/sidoarjo.png" width="100px" height="90.28px" alt="">
                       <h1 class="text-success font-weight-bold tx-50">Sign In</h1>
                       <b-form @submit="onSubmit" @reset="onReset" v-if="show">

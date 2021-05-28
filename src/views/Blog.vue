@@ -3,21 +3,21 @@
       <Navbar />
       <div class="bgx" v-bind:style="{ 'background-image': 'url(' + heroImage + ')' }">
           <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
-              <p class="text-white font-weight-bold tx-24 text-center mb-0">{{datePublished}} | Oleh {{writtenBy}} | {{views}} views</p>
-              <h1 class="text-white font-weight-bold tx-72 text-center">{{title}}</h1>
+              <p class="text-white font-weight-bold tx-24-resp text-center mb-0">{{datePublished}} | Oleh {{writtenBy}} | {{views}} views</p>
+              <h1 class="text-white font-weight-bold tx-72-resp text-center">{{title}}</h1>
           </div>
       </div>
       <div class="container d-flex flex-column mw-860">
-          <div class="blog-content align-self-center py-4" v-html="markdown"></div>
-          <p class="font-weight-bold tx-24 mt-3">Bagikan</p>
-          <div class="d-flex h3 align-content-center">
-              <a href="#" class="pr-2"><b-icon-twitter variant="success"></b-icon-twitter></a>
-              <a href="#" class="px-2"><b-icon-linkedin variant="success"></b-icon-linkedin></a>
-              <a href="#" class="px-2"><b-icon-facebook variant="success"></b-icon-facebook></a>
-              <a href="#" class="px-2"><b-icon-instagram variant="success"></b-icon-instagram></a>
-              <a href="#" class="pl-2"><b-icon-youtube variant="success"></b-icon-youtube></a>
+          <div class="blog-content tx-24-resp align-self-center py-4" v-html="markdown"></div>
+          <p class="font-weight-bold tx-24-resp mt-3">Bagikan</p>
+          <div class="d-flex tx-24-resp align-content-center">
+              <a href="#" class="text-success pr-2"><b-icon-twitter></b-icon-twitter></a>
+              <a href="#" class="text-success px-2"><b-icon-linkedin></b-icon-linkedin></a>
+              <a href="#" class="text-success px-2"><b-icon-facebook></b-icon-facebook></a>
+              <a href="#" class="text-success px-2"><b-icon-instagram></b-icon-instagram></a>
+              <a href="#" class="text-success pl-2"><b-icon-youtube></b-icon-youtube></a>
           </div>
-          <p class="font-weight-bold tx-24 mt-5">Komentar</p>
+          <p class="font-weight-bold tx-24-resp mt-5">Komentar</p>
           <form>
               <div class="row">
                   <div class="col-12">
@@ -25,16 +25,16 @@
                   </div>
               </div>
               <div class="row my-3">
-                  <div class="col-6">
+                  <div class="col-12 col-md-6 py-2">
                       <input type="email" name="email" id="email" placeholder="Email" class="w-100 border-0 bg-gray p-2">
                   </div>
-                  <div class="col-6">
+                  <div class="col-12 col-md-6 py-2">
                       <input type="text" name="nama" id="nama" placeholder="Nama" class="w-100 border-0 bg-gray p-2">
                   </div>
               </div>
               <div class="row my-5">
                   <div class="col-12">
-                      <button type="submit" class="btn btn-success btn-block">Kirim</button>
+                      <button type="submit" class="btn btn-success font-weight-bold btn-block">Kirim</button>
                   </div>
               </div>
           </form>

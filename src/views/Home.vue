@@ -8,10 +8,10 @@
         <template #img>
           <img class="d-block img-fluid w-100 dark-80" width="1024" height="480" :src="item.image" alt="image slot">
         </template>
-        <div class="text-left">
-            <p class="font-weight-bold tx-86 mb-0">{{item.title}}</p>
-            <p class="font-weight-bold tx-64 mb-5">{{item.subtitle}}</p>
-            <b-button size="md" class="btn-selengkapnya rounded-pill text-white font-weight-bold tx-16 px-3 py-2" :href="item.link">Selengkapnya</b-button>
+        <div class="text-xl-left">
+            <p class="font-weight-bold tx-86-resp mb-0">{{item.title}}</p>
+            <p class="font-weight-bold tx-64-resp mb-lg-5 mb-md-4 mb-sm-3 mb-2">{{item.subtitle}}</p>
+            <b-button class="btn-selengkapnya rounded-pill text-white font-weight-bold tx-16-resp px-lg-3 px-2 py-lg-2 py-1" :href="item.link">Selengkapnya</b-button>
         </div>
       </b-carousel-slide>
     </b-carousel>
@@ -21,7 +21,7 @@
       <MenuLayanan />
       <div class="container pb-5">
           <div class="row py-5 m-5">
-              <div class="col" v-for="item in info1" :key="item.title">
+              <div class="col p-3" v-for="item in info1" :key="item.title">
                   <h4 class="font-weight-bold tx-19">{{item.title}}</h4>
                   <span class="d-flex"><hr class="lg ml-0 mr-2"> <hr class="md mx-0"></span>
                   <p class="font-weight-bold tx-13">{{item.isi}}</p>
@@ -29,7 +29,7 @@
               </div>
           </div>
           <div class="row mb-5">
-              <a href="#" class="col p-0" v-for="item in info2" :key="item.title">
+              <a href="#" class="col-md-4 col-12 p-0" v-for="item in info2" :key="item.title">
                   <img class="img-fluid w-100 h-100" :src="item.image" alt="">
                   <div class="hero-info text-center text-white h2">
                       <p class="tx-36">{{item.title}}</p>
@@ -85,12 +85,15 @@
     <div class="news py-4 my-5">
       <div class="container py-5">
           <div class="row">
-              <div class="col-5">
+              <div class="d-block d-md-none col-12 text-center">
+                  <img class="img-fluid rounded-lg" :src="news.image" alt="">
+              </div>
+              <div class="col-12 col-md-5">
                   <p class="h3 news font-weight-bold tx-24 my-3">{{news.title}}</p>
                   <p class="font-weight-bold tx-13">{{news.excerpt}}</p>
                   <b-button class="btn btn-success rounded-lg font-weight-bold tx-12 my-3" :href="news.link">READ MORE</b-button>
               </div>
-              <div class="col text-center">
+              <div class="d-none d-md-block col text-center">
                   <img class="img-fluid rounded-lg" :src="news.image" alt="">
               </div>
           </div>
@@ -102,14 +105,14 @@
       <div class="bg-success rounded-lg p-4">
           <div class="container">
               <div class="row justify-content-center">
-                  <div class="col-auto p-0 h3 text-warning font-weight-bold tx-36">SIDOARJO</div>
-                  <div class="col-auto p-0 h1 text-primary tx-64">/</div>
-                  <div class="col-auto p-0 h3 align-self-end text-white font-weight-bold tx-36">GALLERY</div>
+                  <div class="col-auto p-0 h3 text-warning font-weight-bold tx-36-resp">SIDOARJO</div>
+                  <div class="col-auto p-0 h1 text-primary tx-64-resp">/</div>
+                  <div class="col-auto p-0 h3 align-self-end text-white font-weight-bold tx-36-resp">GALLERY</div>
               </div>
-              <div class="d-flex justify-content-around">
-                  <div class="m-1"><img class="rounded-lg" src="../assets/gallery0.png" alt=""></div>
-                  <div class="m-1 align-self-end"><img class="rounded-lg" src="../assets/gallery1.png" alt=""></div>
-                  <div class="m-1"><img class="rounded-lg" src="../assets/gallery2.png" alt=""></div>
+              <div class="d-flex flex-column flex-md-row justify-content-around">
+                  <div class="d-flex d-md-block justify-content-center m-1"><img class="rounded-lg" src="../assets/gallery0.png" alt=""></div>
+                  <div class="d-flex d-md-block justify-content-center m-1 align-self-md-end"><img class="rounded-lg" src="../assets/gallery1.png" alt=""></div>
+                  <div class="d-flex d-md-block justify-content-center m-1"><img class="rounded-lg" src="../assets/gallery2.png" alt=""></div>
               </div>
           </div>
       </div>
@@ -119,23 +122,23 @@
     <div class="ln-pemerintahan py-5 my-5">
       <div class="container bg-success rounded-lg p-4">
           <div class="row font-weight-bold">
-            <div class="col d-flex flex-column">
+            <div class="col d-flex flex-column py-3">
                 <p class="text-light">Dinas</p>
                 <a class="text-light small" v-for="item in dataDinas" :key="item.title" :href="item.link">{{item.title}}</a>
             </div>
-            <div class="col d-flex flex-column">
+            <div class="col d-flex flex-column py-3">
                 <p class="text-light">Kecamatan</p>
                 <a class="text-light small" v-for="item in dataKecamatan" :key="item.title" :href="item.link">{{item.title}}</a>
             </div>
-            <div class="col d-flex flex-column">
+            <div class="col d-flex flex-column py-3">
                 <p class="text-light">Badan</p>
                 <a class="text-light small" v-for="item in dataBadan" :key="item.title" :href="item.link">{{item.title}}</a>
             </div>
-            <div class="col d-flex flex-column">
+            <div class="col d-flex flex-column py-3">
                 <p class="text-light">Bagian</p>
                 <a class="text-light small" v-for="item in dataBagian" :key="item.title" :href="item.link">{{item.title}}</a>
             </div>
-            <div class="col d-flex flex-column">
+            <div class="col d-flex flex-column py-3">
                 <p class="text-light">Lainnya</p>
                 <a class="text-light small" v-for="item in dataLainnya" :key="item.title" :href="item.link">{{item.title}}</a>
             </div>

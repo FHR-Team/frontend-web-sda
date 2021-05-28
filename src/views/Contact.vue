@@ -3,7 +3,7 @@
       <Navbar />
       <div class="bgx" v-bind:style="{ 'background-image': 'url(' + heroImage + ')' }">
           <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
-              <h1 class="text-white font-weight-bold tx-72 text-center">Hubungi Kami</h1>
+              <h1 class="text-white font-weight-bold tx-72-resp text-center">Hubungi Kami</h1>
           </div>
       </div>
       <div class="container d-flex flex-column mw-860">
@@ -20,17 +20,19 @@
                   </div>
               </div>
               <div class="row my-3">
-                  <div class="col-2" v-bind:style="{ 'background-image': 'url(' + captcha + ')', backgroundRepeat: 'no-repeat' }"></div>
-                  <div class="col-4">
+                  <div class="col-6 col-md-2">
+                      <img :src="captcha" alt="">
+                  </div>
+                  <div class="col-6 col-md-4">
                       <input type="text" name="verification" id="verification" placeholder="Verification Code" class="w-100 border-0 bg-gray p-2">
                   </div>
-                  <div class="col-6">
+                  <div class="col-12 col-md-6">
                       <input type="email" name="email" id="email" placeholder="Email" class="w-100 border-0 bg-gray p-2">
                   </div>
               </div>
               <div class="row my-5">
                   <div class="col-12">
-                      <button type="submit" class="btn btn-success btn-block">SUBMIT</button>
+                      <button type="submit" class="btn btn-success font-weight-bold btn-block">Submit</button>
                   </div>
               </div>
           </form>
@@ -60,7 +62,7 @@ export default {
     methods: {
         getImage() {
             this.heroImage = "'../assets/slide.jpg'"
-            this.captcha = "'../assets/captcha.png'"
+            this.captcha = "../assets/captcha.png"
         }
     }
 }

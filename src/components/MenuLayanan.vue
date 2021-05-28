@@ -1,8 +1,8 @@
 <template>
   <div class="menu-layanan">
       <div class="container">
-          <div class="d-flex text-center mx-4">
-              <div class="col" v-for="item in dataMenuLayanan" :key="item.nama">
+          <div class="row text-center mx-4">
+              <div class="col-lg-2 col-md-4 col-6 p-2" v-for="item in dataMenuLayanan" :key="item.nama">
                   <b-button :href="item.link" class="btn btn-layanan btn-light btn-block rounded-lg shadow font-weight-bold tx-14 p-4">
                       <img class="mb-2" :src="item.image" alt=""><br>
                       <span>{{item.nama}}</span>

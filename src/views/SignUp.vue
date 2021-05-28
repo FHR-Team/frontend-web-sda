@@ -3,7 +3,8 @@
       <div class="container bg-white h-100">
           <div class="d-flex h-100 justify-content-center align-items-center">
               <div class="row rounded shadow">
-                  <div class="col p-3 d-flex flex-column justify-content-center align-items-center">
+                  <div class="d-block d-md-none col-12 col-md-6 p-0"><img class="img-fluid h-100 rounded-right" src="../assets/batik2.png" alt=""></div>
+                  <div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center align-items-center">
                       <img src="../assets/sidoarjo.png" width="100px" height="90.28px" alt="">
                       <h1 class="text-success font-weight-bold tx-50">Sign Up</h1>
                       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
@@ -33,7 +34,7 @@
                       </b-form>
                       <p class="text-muted mb-0">Sudah punya akun? <router-link to="/sign-in" class="text-muted">login</router-link></p>
                   </div>
-                  <div class="col p-0"><img class="img-fluid h-100 rounded-right" src="../assets/batik2.png" alt=""></div>
+                  <div class="d-none d-md-block col-12 col-md-6 p-0"><img class="img-fluid h-100 rounded-right" src="../assets/batik2.png" alt=""></div>
               </div>
           </div>
       </div>
