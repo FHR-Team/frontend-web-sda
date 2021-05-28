@@ -1,5 +1,6 @@
 <template>
   <div class="contact">
+      <Title :title="title" />
       <Navbar />
       <div class="bgx" v-bind:style="{ 'background-image': 'url(' + heroImage + ')' }">
           <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
@@ -44,14 +45,16 @@
 <script>
 import Navbar from '@/components/Navbar.vue'
 import Footer from '@/components/Footer.vue'
+import Title from '@/components/Title.vue'
 
 export default {
     name: "Contact",
     components: {
-        Navbar, Footer
+        Navbar, Footer, Title
     },
     data() {
         return {
+            title: 'Kontak',
             heroImage: '',
             captcha: ''
         }

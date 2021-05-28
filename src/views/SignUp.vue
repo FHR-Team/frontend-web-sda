@@ -1,5 +1,6 @@
 <template>
   <div class="sign-in vh-100">
+      <Title :title="title" />
       <div class="container bg-white h-100">
           <div class="d-flex h-100 justify-content-center align-items-center">
               <div class="row rounded shadow">
@@ -42,10 +43,16 @@
 </template>
 
 <script>
+import Title from '@/components/Title.vue'
+
 export default {
     name: "SignUp",
+    components: {
+      Title
+    },
     data() {
       return {
+        title: 'Sign Up',
         form: {
           email: '',
           password: '',

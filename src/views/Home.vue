@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Title :title="title" />
     <Navbar active='0'/>
 
 
@@ -155,14 +156,16 @@
 import Navbar from '@/components/Navbar.vue'
 import MenuLayanan from '@/components/MenuLayanan.vue'
 import Footer from '@/components/Footer.vue'
+import Title from '@/components/Title.vue'
 
 export default {
   name: "Home",
   components: {
-    Navbar, MenuLayanan, Footer
+    Navbar, MenuLayanan, Footer, Title
   },
   data() {
     return {
+      title: 'Home',
       dataCarousel: [],
       lorem: 'Esse eiusmod esse tempor proident culpa velit quis do non quis dolor. Est exercitation cillum ipsum ad veniam fugiat nostrud irure. Id enim esse est ea in elit consectetur magna in.',
       info1: [],
