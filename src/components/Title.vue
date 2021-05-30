@@ -10,7 +10,7 @@ export default {
         title: {
             immediate: true,
             handler() {
-                document.title = this.title + ' - Portal Siodoarjo'
+                document.title = this.title + ' - Portal Sidoarjo'
             }
         }
     }
